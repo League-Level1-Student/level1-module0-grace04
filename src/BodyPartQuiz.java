@@ -41,14 +41,19 @@ public class BodyPartQuiz {
 			
 			// 5. Check their answer. If they guessed correctly:
 			// -- Tell them they are right and increase the score by 1
-
+			if (guess.equals("an animal within the observable universe, assuming that it is matter and a male mammal")) {
+				JOptionPane.showMessageDialog(null, "right");
+				score++;
+			}
 			// 6. Otherwise:
 			// -- Tell them they are wrong and who the person is
-
+			else {
+				JOptionPane.showMessageDialog(null, "wrong");
+			}
 			// 7. Use the showNextImage() method below to get the next image
 			showNextImage();
 		    // 8. Show them their current score
-			
+			JOptionPane.showMessageDialog(null, score);
 			// 9. .... repeat for all your images.....
 
 
