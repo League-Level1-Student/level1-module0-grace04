@@ -2,6 +2,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Random;
 
+import javax.print.DocFlavor.URL;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JApplet;
@@ -49,7 +50,7 @@ public class JackintheBox implements ActionListener{
 	
 	private JLabel createLabelImage(String fileName) {
 	     try {
-	          URL imageURL = getClass().getResource(fileName);
+	          java.net.URL imageURL = getClass().getResource(fileName);
 	          if (imageURL == null) {
 	               System.err.println("Could not find image " + fileName);
 	               return new JLabel();
@@ -66,7 +67,7 @@ public class JackintheBox implements ActionListener{
 
 	private void playSound(String soundFile) { 
 	     try {
-	          AudioClip sound = JApplet.newAudioClip(getClass().getResource(soundFile));
+	          java.applet.AudioClip sound = JApplet.newAudioClip(getClass().getResource(soundFile));
 	          sound.play();
 	     } catch (Exception e) {
 	          e.printStackTrace();
