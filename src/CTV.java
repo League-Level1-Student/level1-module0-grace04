@@ -1,25 +1,22 @@
-import java.applet.AudioClip;
-import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.net.URI;
 
-import javax.swing.JApplet;
 import javax.swing.JButton;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class SEM implements MouseListener {
+public class CTV implements MouseListener {
 	
 	public static void main(String[] args) {
-		SEM machine = new SEM();
-		machine.showButton();
+	CTV ctv = new CTV();
+	ctv.showButton();
 	}
 	
-		JButton button1 = new JButton();
-		JButton button2 = new JButton();
-		
+	JButton button1 = new JButton();
+	JButton button2 = new JButton();
+	JButton button3 = new JButton();
+	
 	private void showButton() {
 	    JFrame frame = new JFrame();
 		frame.setVisible(true);
@@ -30,24 +27,45 @@ public class SEM implements MouseListener {
 		button1.addMouseListener(this);
 		panel.add(button2);
 		button2.addMouseListener(this);
+		panel.add(button3);
+		button3.addMouseListener(this);
 		frame.pack();
 	}
-
+	
 	public void mouseClicked(MouseEvent e) {
 	    System.out.println("Button clicked");
 		// TODO Auto-generated method stub
 		JButton mouseClicked = (JButton) e.getSource();
 		if (mouseClicked.equals(button1)) {
-			playSound("drum.wav");
+			showDucks();
 		}
 		else if (mouseClicked.equals(button2)) {
-			playSound("cymbal.wav");
+			showFrog();
+		}
+		else if (mouseClicked.equals(button3)) {
+			showFluffyUnicorns();
 		}
 	}
 	
-	private void playSound(String fileName) {
-		AudioClip sound = JApplet.newAudioClip(getClass().getResource(fileName));
-		sound.play();
+	void showDucks() {
+	     playVideo("https://www.youtube.com/watch?v=MtN1YnoL46Q");
+	}
+
+	void showFrog() {
+	     playVideo("https://www.youtube.com/watch?v=cBkWhkAZ9ds");
+	}
+
+	void showFluffyUnicorns() {
+	     playVideo("https://www.youtube.com/watch?v=a-xWhG4UU_Y");
+	}
+
+	void playVideo(String videoID) {
+	     try {
+	          URI uri = new URI(videoID);
+	          java.awt.Desktop.getDesktop().browse(uri);
+	     } catch (Exception e) {
+	          e.printStackTrace();
+	     }
 	}
 
 	@Override
@@ -73,5 +91,4 @@ public class SEM implements MouseListener {
 		// TODO Auto-generated method stub
 		
 	}
-	
 }
