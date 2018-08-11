@@ -24,10 +24,13 @@ public class CTV implements MouseListener {
 		JPanel panel = new JPanel();
 		frame.add(panel);
 		panel.add(button1);
+		button1.setText("Ducks");
 		button1.addMouseListener(this);
 		panel.add(button2);
+		button2.setText("Frog");
 		button2.addMouseListener(this);
 		panel.add(button3);
+		button3.setText("Hell and Insanity");
 		button3.addMouseListener(this);
 		frame.pack();
 	}

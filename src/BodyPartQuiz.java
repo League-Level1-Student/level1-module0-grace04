@@ -41,7 +41,7 @@ public class BodyPartQuiz {
 			
 			// 5. Check their answer. If they guessed correctly:
 			// -- Tell them they are right and increase the score by 1
-			if (guess.equals("an animal within the observable universe, assuming that it is matter and a male mammal")) {
+			if (guess.equals("an animal within the observable universe, assuming that it is made up of matter and a mammal carrying the male genitalia")) {
 				JOptionPane.showMessageDialog(null, "right");
 				score++;
 			}
@@ -49,6 +49,7 @@ public class BodyPartQuiz {
 			// -- Tell them they are wrong and who the person is
 			else {
 				JOptionPane.showMessageDialog(null, "wrong");
+				JOptionPane.showMessageDialog(null, "it is an animal within the observable universe, assuming that it is made up of matter and a mammal carrying the male genitalia");
 			}
 			// 7. Use the showNextImage() method below to get the next image
 			showNextImage();
